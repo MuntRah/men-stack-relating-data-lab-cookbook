@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>add new app</h1>
+    <!-- views/foods/new.ejs -->
+
+    <form action="/users/<%= user._id %>/foods" method="POST">
+      <label for="name">name:</label>
+      <input type="text" name="name" id="name" required />
+
+
+      <input type="submit" class="submit" />
+    </form>
+  </body>
+</html>

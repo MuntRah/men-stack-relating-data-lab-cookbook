@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editing <%= item.title %></title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1>Edit <%= item.name %></h1>
+   
+
+  <!-- We'll use method-override to allow us to hit a put route: -->
+  <form 
+    action="/users/<%= user._id %>/foods/<%= item._id %>?_method=PUT"
+    method="POST"
+  >
+    <label for="name">name:</label>
+    <input 
+      type="text" 
+      name="name" 
+      id="name" 
+      value="<%= item.name %>"
+    >
+    
+    <button type="submit">Update item</button>
+  </form>
+</body>
+</html>
